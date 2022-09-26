@@ -1,0 +1,17 @@
+<template>
+    <div class="menu-item-container">
+        <h1 class="menu-header">SMOOTHIES</h1>
+    </div>
+    <div class="wrapper">
+        <button class="btn-prev"></button>
+        <div class="slider-container">
+            <div class="slider-track">
+                <template for:each={products.data} for:item="product">
+                    <c-productitem key={product.Name} product={product} class="slider-item">
+                    </c-productitem>
+                </template>
+            </div>
+        </div>
+        <button class="btn-next"></button>
+    </div>
+ </template>

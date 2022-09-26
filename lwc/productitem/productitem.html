@@ -1,0 +1,18 @@
+<template>
+    <div class="container">
+        <div class="product-card">
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                        <div class="flip-box-back">
+                            <p class="title-description">INGREDIENTS</p>
+                            <p class="product-description">{product.Description}</p>
+                        </div>
+                        <div class="avatar-container flip-box-front">
+                            <img class="avatar" src={logoURL} alt="smoothie avatar">
+                        </div>
+                    </div>
+            </div>
+            <p class="product-card-owner card-text-limit-name">{product.Name}</p>
+        </div>
+    </div>
+</template>

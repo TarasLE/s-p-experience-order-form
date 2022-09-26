@@ -1,0 +1,79 @@
+<template>
+    <div class="component-container">
+        <div class="order-header-container">
+            <h1 class="order-header-title">CREATE ORDER FORM</h1>
+        </div>
+        <div class="order-form-container">
+            <div class="choose-product-block">
+    <!-- //PICKLIST -->
+                <lightning-combobox label="" value={value} placeholder="Choose Smoothie" options={options}
+                    onchange={handleChange} class="picklist-product"></lightning-combobox>
+     <!-- //COUNTER -->
+                <div class="quantity-container">
+                    <lightning-button label="-" variant="brand" onclick={handleDecrement} class="counter-button">
+                    </lightning-button>
+                        <p class="count-value">{count}</p>
+                    <lightning-button label="+" variant="brand" onclick={handleIncrement} class="counter-button" >
+                    </lightning-button>
+                </div>
+    <!-- ADD PRODUCT BUTTON -->
+                <div class="add-product-button">
+                    <lightning-button label="Add to Order" variant="brand" onclick={handleAddProduct}>
+                        <!-- <lightning-button label="Add to Order" variant="brand" onclick={handleAddProduct} disabled={disableButton}> -->
+                    </lightning-button>
+                </div>
+            </div>
+            <template if:true={previewData}>
+                <div class="order-header">
+                    <p>MY ORDER</p>
+                </div>
+                <div class="chosen-item-header">
+                    <p class="chosen-item-header-text">NAME</p>
+                    <p class="chosen-item-header-text">QUANTITY</p>
+                    <p class="chosen-item-header-text">PRICE</p>
+                </div>
+            </template>
+            <template if:true={previewData} for:each={previewItems} for:item="item">
+                <c-order-item key={item.Name} item={item}>
+                </c-order-item>
+            </template>
+            <template if:true={previewData}>
+                <div class="total-price-container">
+                    <p class="total-price-text">TOTAL PRICE :&nbsp;</p>
+                    <p class="total-price-value">{totalPrice}$</p>
+                </div>
+                <div class="detail-formation-container">
+                    <div class="order-details-container">
+                        <div class="order-time-header">
+                            <p class="chosen-item-header-text">CHOOSE THE TIME OF ORDER READINESS</p>
+                        </div>
+                        <div class="time-picklist-block">
+                            <div class="time-picklist-hours">
+                                <c-order-hour-picklist onhourschoseevent={handleHoursChange}>
+                                </c-order-hour-picklist>
+                            </div>
+                            <div class="time-picklist-minutes">
+                                <c-order-minutes-picklist onminutechoseevent={handleMinutesChange}>
+                                </c-order-minutes-picklist>
+                            </div>
+                        </div>
+                        <template if:true={validOrderTime}>
+                            <p class="time-valid-notification">Please choose the correct time</p>
+                        </template>
+                        <div class="comment-header">
+                            <p class="chosen-item-header-text">COMMENTS</p>
+                        </div>
+                            <textarea name="textarea" rows="5" cols="30" placeholder="Type comments here..." class="comment-block" onchange={handleCommentInput}></textarea>
+                             <lightning-input class="checkbox-order-readiness" type="checkbox" label="Order readines notification" onchange={handleCheckboxChange}>
+                            </lightning-input>
+                    </div>
+                    <div class="confirm-order-button">
+                        <lightning-button label="Confirm Order" variant="brand" onclick={handleConfirmfOrder}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+    <div class="srollBlock"></div>
+</template>

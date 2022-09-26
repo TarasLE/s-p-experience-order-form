@@ -1,0 +1,222 @@
+.component-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin-bottom: 100px;
+}
+
+.order-header-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-header-title{
+    font-size: 24px;
+}
+
+.order-form-container{
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    border:solid #a7a7a7 2px;
+    background-color: rgba(238, 238, 238, 1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.order-form-container:hover{
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.choose-product-block{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+
+
+.quantity-container{
+    display: flex;
+    border:solid rgb(36, 119, 204) 1px;
+    align-items: center;
+    height: max-content;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+.count-value{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* PICKLIST */
+.picklist-product{
+    width:75%;
+}
+
+.add-product-button,
+.confirm-order-button{
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: max-content;
+    margin-top: 15px;
+}
+
+
+/* HEADER OF CHOSEN ITEMS IN ORDER FORM */
+.chosen-item-header{
+    background-color: rgba(0, 0, 0, 0.534);
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 10px;
+    border:solid #a7a7a7 2px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 9px #a7a7a7e3;
+    display: flex;
+    flex-direction:row;
+    align-items: flex-end;
+    justify-content: space-between;
+    
+}
+
+.item-properties{
+    display: flex;
+    flex-direction:row;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 55%;
+}
+
+.order-header{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    font-weight: 700;
+}
+.chosen-item-header-text{
+    color:azure;
+}
+
+/* TOTAL PRICE */
+.total-price-container{
+    padding-right: 25px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
+}
+.total-price-text{
+    font-weight: 700;
+}
+.total-price-value{
+    font-weight: 700;
+    color: tomato;
+}
+
+/* TIME READINESS */
+.order-time-header,
+.comment-header{
+    background-color: rgba(0, 0, 0, 0.534);
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 15px;
+    border:solid #a7a7a7 2px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 9px #a7a7a7e3;
+    display: flex;
+     width: max-content;
+}
+.time-picklist-block{
+    display: flex;
+    justify-content: space-between;
+ }
+
+.order-details-container{
+    display: flex;
+    flex-direction:column;
+    width: max-content;
+}
+.time-picklist-hours{
+    width: 50%;
+    padding-right: 5px;
+}
+.time-picklist-minutes{
+    width: 50%;
+    padding-left: 5px;
+}
+.time-valid-notification{
+    color: tomato;
+}
+/* COMMENTS BLOCK */
+.comment-block{
+    margin-top: 15px;
+    width: 100%;
+    resize: none;
+    border: solid 1px rgb(217, 215, 213);
+    border-radius: 5px;
+    transition: border 0.25s ease-in-out;
+}
+.comment-block:hover,
+.comment-block:focus{
+    outline: none !important;
+    border: solid 2px rgba(0, 0, 0, 0.534);
+}
+
+/* CHECKBOX */
+.checkbox-order-readiness{
+    margin-top: 5px;
+}
+
+.detail-formation-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 610px) {
+.choose-product-block{
+    display: flex;
+    flex-direction:row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.quantity-container{
+    display: flex;
+    border:solid rgb(36, 119, 204) 1px;
+    align-items: center;
+    height: max-content;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.add-product-button,
+.confirm-order-button{
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: max-content;
+}
+
+.detail-formation-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+}
+
+.srollBlock{
+    width: auto;
+    color: black;
+}
